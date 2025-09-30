@@ -9,11 +9,11 @@ public class HidrometroUpdater extends Thread {
     private final String arquivoEntrada;
     private final String arquivoSaida;
 
-    public HidrometroUpdater(HidrometroPanel panel) {
+    public HidrometroUpdater(HidrometroPanel panel, String arquivoEntrada, String arquivoSaida) {
         this.panel = panel;
         String baseDir = System.getProperty("user.dir");
-        this.arquivoEntrada = baseDir + File.separator + "vazao.txt";
-        this.arquivoSaida = baseDir + File.separator + "hidrometro.png";
+        this.arquivoEntrada = baseDir + File.separator + arquivoEntrada;
+        this.arquivoSaida = baseDir + File.separator + arquivoSaida;
         inicializarArquivo();
     }
 
